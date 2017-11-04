@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: micro-weather-eureka-server
+
+#eureka服务器的启动端口
+server:
+  port: 8761
+  
+#eureka的主机名 如果不配置 会从操作系统获取
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #registerWithEureka: false 
+    #fetchRegistry: false  #是否允许客户端抓取eureka的注册信息
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
